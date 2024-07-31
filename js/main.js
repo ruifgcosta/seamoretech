@@ -502,11 +502,11 @@ var loadPortfolioSinglePage = function (id, href) {
 
 var jarallaxPlugin = function () {
 	$('.jarallax').jarallax({
-		speed: 0.1,
+		speed: 0.2,
 	});
 	jarallax(document.querySelectorAll('.jarallax-video'), {
-		speed: 0.1,
-		videoSrc: 'https://www.youtube.com/watch?v=3fKeYTjSJHo',
+		speed: 0.2,
+		videoSrc: 'https://www.youtube.com/watch?v=3fKeYTjSJHo&vq=hd2160',
 		videoStartTime: 0,
 		videoEndTime: 22,
 	});
