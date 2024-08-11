@@ -1,7 +1,7 @@
 <?php
 
 // Replace this with your own email address
-$to = 'joefrey.mahusay@gmail.com';
+$to = 'ruifgomesc@gmail.com';
 
 function url(){
   return sprintf(
@@ -26,7 +26,7 @@ if($_POST) {
 	 $message .= "Email address: " . $email . "<br />";
    $message .= "Message: <br />";
    $message .= nl2br($contact_message);
-   $message .= "<br /> ----- <br /> This email was sent from your site " . url() . " contact form. <br />";
+   $message .= "<br /> ----- <br /> This email was sent from your site contact form. <br />";
 
    // Set From: header
    $from =  $name . " <" . $email . ">";

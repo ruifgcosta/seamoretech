@@ -270,11 +270,12 @@ var floatingLabel = function () {
 // scroll
 var scrollWindow = function () {
 	var lastScrollTop = 0;
+	var logo = $('#logo'); // Select the logo image
+
 	$(window).scroll(function (event) {
 		var $w = $(this),
 			st = $w.scrollTop(),
 			navbar = $('.unslate_co--site-nav');
-		// sd = $('.js-scroll-wrap');
 
 		if (st > 150) {
 			if (!navbar.hasClass('scrolled')) {
@@ -289,6 +290,7 @@ var scrollWindow = function () {
 		if (st > 350) {
 			if (!navbar.hasClass('awake')) {
 				navbar.addClass('awake');
+				logo.attr('src', 'images/logo_rgbhorizontal_colors_regular.png'); // Change to another logo
 			}
 
 			// hide / show on scroll
@@ -296,9 +298,11 @@ var scrollWindow = function () {
 				// downscroll code
 				navbar.removeClass('awake');
 				navbar.addClass('sleep');
+				logo.attr('src', 'images/logo_rgbhorizontal_colors_light.png'); // Revert to original logo
 			} else {
 				// upscroll code
 				navbar.addClass('awake');
+				logo.attr('src', 'images/logo_rgbhorizontal_colors_regular.png'); // Change to another logo again
 			}
 			lastScrollTop = st;
 		}
@@ -306,6 +310,7 @@ var scrollWindow = function () {
 			if (navbar.hasClass('awake')) {
 				navbar.removeClass('awake');
 				navbar.addClass('sleep');
+				logo.attr('src', 'images/logo_rgbhorizontal_colors_light.png'); // Revert to original logo
 			}
 		}
 	});
