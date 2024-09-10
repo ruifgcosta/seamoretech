@@ -36,7 +36,7 @@ body.offcanvas:before {
 
 body,
 .unslate_co--site-inner {
-	background: #f0ebe6;
+	background: #fdfdfd;
 }
 
 ::-moz-selection {
@@ -1291,7 +1291,7 @@ a:hover {
 
 .heading-h2 {
 	font-size: 32px;
-	color: #000;
+	color: #054b62;
 	font-weight: 900;
 }
 
@@ -1303,7 +1303,7 @@ a:hover {
 .heading-h3 {
 	font-size: 26px;
 	font-weight: 900;
-	color: #000;
+	color: #054b62;
 }
 
 .lead {
@@ -1493,6 +1493,7 @@ figure.dotted-bg:before {
 	top: -30px;
 	font-size: 28px;
 	font-weight: 900;
+	color: #054b62;
 }
 
 .counter-v1 .counter-label {
@@ -1806,6 +1807,7 @@ figure.dotted-bg:before {
 	margin-bottom: 40px;
 	font-size: 50px;
 	font-weight: 900;
+	color: #054b62;
 }
 
 @media (max-width: 991.98px) {
@@ -1905,21 +1907,43 @@ figure.dotted-bg:before {
 
 .detail-v1 .detail-label {
 	display: block;
-	font-size: 18px;
+	font-size: 1.21rem; /* Tamanho relativo (18px equivalente) */
 	font-weight: 900;
 	text-transform: uppercase;
 	letter-spacing: 0.1rem;
-	color: rgba(0, 0, 0, 0.5);
+	color: #054b62;
 }
 
 .detail-v1 .detail-val {
-	font-size: 15px;
+	font-size: 1rem; /* Tamanho relativo (15px equivalente) */
 	color: #000;
 	font-weight: 200;
 }
 
 .detail-v1 .detail-val a {
 	color: #000;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+	.detail-v1 .detail-label {
+		font-size: 1.2rem; /* Reduz para 16px em telas menores */
+	}
+
+	.detail-v1 .detail-val {
+		font-size: 0.975rem; /* Reduz para 14px em telas menores */
+	}
+}
+
+/* Ajuste para telas ainda menores, como smartphones */
+@media (max-width: 480px) {
+	.detail-v1 .detail-label {
+		font-size: 0.975rem; /* Reduz para 14px em smartphones */
+	}
+
+	.detail-v1 .detail-val {
+		font-size: 0.85rem; /* Reduz para 12px em smartphones */
+	}
 }
 
 .unslate_co--footer {
@@ -2859,4 +2883,95 @@ span.error {
 
 .grid-item:hover .hover-image {
 	opacity: 1;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+	position: relative;
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(10px);
+	border-radius: 20px;
+	padding: 30px;
+	text-align: center;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center; /* Centralização vertical */
+	align-items: center; /* Centralização horizontal */
+}
+
+/* Hover Blob Effect */
+.glass-card::before {
+	content: '';
+	position: absolute;
+	top: var(--y, 50%);
+	left: var(--x, 50%);
+	width: 150px; /* Reduzi o tamanho da mancha */
+	height: 150px;
+	background: rgba(154, 216, 224, 0.5); /* Cor da mancha */
+	border-radius: 50%;
+	opacity: 0;
+	pointer-events: none;
+	transform: translate(-50%, -50%) scale(0);
+	transition: opacity 0.3s ease, transform 0.5s ease;
+	z-index: 1;
+	filter: blur(30px); /* Aplicado o efeito de blur */
+}
+
+.glass-card:hover::before {
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1);
+}
+
+/* Garantir que o conteúdo do card fique acima do blob */
+.glass-card * {
+	position: relative;
+	z-index: 2;
+}
+
+/* Text inside the card */
+.card-text {
+	font-size: 1.5rem; /* Tamanho maior do texto */
+	color: black; /* Cor preta */
+	margin-bottom: 20px;
+	font-weight: 500;
+}
+
+/* Estado normal do botão */
+.btn-contact {
+	padding: 15px 30px;
+	border: none;
+	background-color: #054b62;
+	color: white; /* Cor inicial */
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	border-radius: 5px;
+	text-decoration: none;
+	transition: color 0.3s ease-in-out; /* Transição para a cor */
+	margin-top: 30px;
+}
+
+.btn-contact:hover {
+	/* Mantemos a cor de fundo */
+	color: #9ad8e0 !important; /* Cor no hover */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.glass-card {
+		padding: 20px;
+	}
+
+	.card-text {
+		font-size: 1.2rem;
+	}
+
+	.btn-contact {
+		font-size: 1rem;
+		padding: 10px 20px;
+	}
 }

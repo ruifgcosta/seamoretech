@@ -654,3 +654,14 @@ var animateReveal = function () {
 		});
 	}
 };
+
+const glassCard = document.getElementById('glassCard');
+
+glassCard.addEventListener('mousemove', e => {
+	const cardRect = glassCard.getBoundingClientRect();
+	const x = e.clientX - cardRect.left;
+	const y = e.clientY - cardRect.top;
+
+	glassCard.style.setProperty('--x', `${x}px`);
+	glassCard.style.setProperty('--y', `${y}px`);
+});
