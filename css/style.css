@@ -2975,3 +2975,162 @@ span.error {
 		padding: 10px 20px;
 	}
 }
+
+/* Wrapper for ticker */
+.ticker-wrapper {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 50%;
+	width: 100%;
+	text-align: center;
+	z-index: 10;
+	overflow: hidden; /* Oculta o texto fora da área visível */
+}
+
+/* Ticker text styling */
+.ticker-text {
+	font-size: 45px;
+	font-weight: 600;
+	color: #054b62; /* Texto preto */
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 100%;
+	text-overflow: ellipsis;
+	animation: ticker-scroll 15s linear infinite;
+	position: relative;
+}
+
+/* Animation for horizontal scroll */
+@keyframes ticker-scroll {
+	0% {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+	10% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+}
+
+/* Vertical positioning for large screens */
+@media (min-width: 992px) {
+	.ticker-wrapper {
+		top: 50%;
+		transform: translate(85%, -50%);
+		width: 6rem;
+		height: 40rem;
+		writing-mode: vertical-rl;
+		text-align: center;
+		overflow: hidden;
+	}
+
+	.ticker-text {
+		writing-mode: vertical-rl;
+		transform: rotate(180deg);
+		animation: ticker-vertical-scroll 15s linear infinite;
+	}
+}
+
+/* Animation for vertical scroll */
+@keyframes ticker-vertical-scroll {
+	0% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	10% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+}
+
+/* Horizontal positioning for smaller screens */
+@media (max-width: 991px) {
+	.ticker-wrapper {
+		top: auto;
+		bottom: 0;
+		width: 100%;
+		text-align: center;
+	}
+
+	.ticker-text {
+		writing-mode: horizontal-tb;
+		animation: ticker-scroll 15s linear infinite;
+	}
+}
+
+/* Horizontal blur effect for smaller screens */
+.ticker-wrapper::before,
+.ticker-wrapper::after {
+	content: '';
+	position: absolute;
+	width: 15%;
+	height: 100%;
+	bottom: 0;
+	z-index: 20;
+}
+
+.ticker-wrapper::before {
+	left: 0;
+	background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.ticker-wrapper::after {
+	right: 0;
+	background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+/* Vertical blur effect for large screens */
+@media (min-width: 992px) {
+	.ticker-wrapper::before,
+	.ticker-wrapper::after {
+		width: 100%;
+		height: 15%;
+		left: 0;
+		z-index: 20;
+	}
+
+	.ticker-wrapper::before {
+		top: 0;
+		background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+	}
+
+	.ticker-wrapper::after {
+		bottom: 0;
+		background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+	}
+}
+
+.social-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid #d3d3d3; /* Borda cinza claro */
+	padding: 10px;
+	margin-bottom: 30px;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+.social-text {
+	font-size: 16px;
+	color: #333; /* Cor do texto */
+}
+
+.social-logo {
+	width: 24px;
+	height: 24px;
+}
