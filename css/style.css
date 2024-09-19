@@ -1302,7 +1302,6 @@ a:hover {
 
 .heading-h3 {
 	font-size: 26px;
-	font-weight: 900;
 	color: #054b62;
 }
 
@@ -1907,9 +1906,8 @@ figure.dotted-bg:before {
 
 .detail-v1 .detail-label {
 	display: block;
-	font-size: 1.21rem; /* Tamanho relativo (18px equivalente) */
-	font-weight: 900;
-	text-transform: uppercase;
+	font-size: 1.62rem; /* Tamanho relativo (26px equivalente) */
+	font-weight: 500;
 	letter-spacing: 0.1rem;
 	color: #054b62;
 }
