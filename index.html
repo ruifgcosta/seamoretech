@@ -18,6 +18,120 @@
 
 		<!-- Theme Style -->
 		<link rel="stylesheet" href="css/style.css" />
+		<style>
+			strong {
+				position: relative;
+				font-weight: 600;
+			}
+
+			strong::before {
+				/* Highlight color */
+				background-color: #9ad8e0;
+
+				content: '';
+				position: absolute;
+				width: calc(100% + 4px);
+				height: 60%;
+				left: -2px;
+				bottom: 0;
+				opacity: 0.35;
+				transform: rotate(-2deg);
+			}
+
+			@keyframes appear {
+				from {
+					opacity: 0;
+					scale: 0.5;
+				}
+				to {
+					opacity: 1;
+					scale: 1;
+				}
+			}
+
+			.block {
+				animation: appear linear;
+				animation-timeline: view();
+				animation-range: entry 0 cover 40%;
+			}
+			/* Caixa com fundo claro e margens */
+			.highlight-box {
+				background-color: #f2f2f2;
+				padding: 30px;
+				border-radius: 10px;
+				text-align: left; /* Alinha o texto à esquerda */
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				height: 100%;
+			}
+
+			/* Título com estilo */
+			.highlight-title {
+				font-weight: 600;
+				font-size: 1.5em;
+				color: #333;
+				margin-bottom: 20px;
+				text-align: center;
+			}
+
+			/* Centro do conteúdo */
+			.highlight-center {
+				flex-grow: 1;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			/* Conteúdo estilizado com sombra sólida e carregada */
+			.highlight-content {
+				font-size: 1.3em;
+				color: white; /* Cor do texto */
+				background-color: #054b62; /* Cor de fundo */
+				line-height: 1.6;
+				margin-bottom: 30px;
+				padding: 20px; /* Adiciona espaçamento interno */
+				border-radius: 10px; /* Bordas arredondadas */
+				box-shadow: 5px 5px 0px #9ad8e0, 5px 5px 0px rgba(154, 216, 224, 0.8); /* Sombra simulando a segunda caixa */
+				position: relative;
+				display: inline-block;
+				width: 100%;
+			}
+
+			/* Mensagem e botão posicionados no fundo */
+			.highlight-message {
+				font-size: 1.4em;
+				font-weight: bold;
+				color: #444;
+				margin-bottom: 10px;
+				position: relative;
+				text-align: left;
+			}
+
+			.highlight-button {
+				margin-bottom: 0; /* Para garantir que o botão fica no fundo */
+			}
+
+			/* Responsividade */
+			@media (max-width: 768px) {
+				.highlight-box {
+					padding: 20px;
+				}
+
+				.highlight-title {
+					font-size: 1.3em;
+				}
+
+				.highlight-content {
+					font-size: 1.2em;
+				}
+
+				.highlight-message {
+					font-size: 1.2em;
+				}
+			}
+		</style>
 	</head>
 	<body data-spy="scroll" data-target=".site-nav-target" data-offset="200">
 		<nav class="unslate_co--site-mobile-menu">
@@ -103,13 +217,13 @@
 								<div class="row justify-content-between align-items-stretch">
 									<div class="col-lg-8">
 										<p>
-											<a href="#" data-fancybox="gal"><img src="images/water_scarcity.jpeg" alt="Image" class="img-fluid" /></a>
+											<a href="#" data-fancybox="gal"><img src="images/water_scarcity.jpeg" alt="Image" class="img-fluid rounded-image" /></a>
 										</p>
 										<p>
-											<a href="#" data-fancybox="gal"><img src="images/brine_discharge.jpeg" alt="Image" class="img-fluid" /></a>
+											<a href="#" data-fancybox="gal"><img src="images/brine_discharge.jpeg" alt="Image" class="img-fluid rounded-image" /></a>
 										</p>
 										<p>
-											<a href="#" data-fancybox="gal"><img src="images/people_displaced.jpg" alt="Image" class="img-fluid" /></a>
+											<a href="#" data-fancybox="gal"><img src="images/people_displaced.jpg" alt="Image" class="img-fluid rounded-image" /></a>
 										</p>
 									</div>
 									<div class="col-lg-4 pl-lg-5">
@@ -177,6 +291,7 @@
 						</div>
 					</div>
 				</div> -->
+
 				<div class="unslate_co--section" id="about-section">
 					<div class="container">
 						<div class="row align-items-center">
@@ -185,29 +300,42 @@
 							</div>
 						</div>
 					</div>
-					<div class="container">
-						<div class="section-heading-wrap text-center mb-5">
-							<h2 class="heading-h2 text-center divider"><span class="gsap-reveal"></span></h2>
-						</div>
-
-						<div class="row mt-5 justify-content-between position-relative">
-							<div class="col-lg-7 mb-5 mb-lg-0" data-aos="fade-up">
-								<figure class="dotted-bg gsap-reveal-img">
-									<div class="img-wrap" style="max-height: 40rem">
-										<img src="images/engenheiros_amb.jpg" alt="Image" class="img-fluid" style="overflow: hidden" />
-									</div>
-								</figure>
+					<div class="block">
+						<div class="container">
+							<div class="section-heading-wrap text-center mb-5">
+								<h2 class="heading-h2 text-center divider"><span class="gsap-reveal"></span></h2>
 							</div>
 
-							<div class="col-lg-4 pr-lg-5">
-								<h3 class="mb-4 heading-h3"><span class="gsap-reveal">One desalination plant at a time, we are revolutionizing the industry!</span></h3>
+							<div class="row mt-5 justify-content-between position-relative">
+								<div class="col-lg-7 mb-5 mb-lg-0" data-aos="fade-up">
+									<figure class="dotted-bg" style="overflow: hidden; margin-bottom: 0px; border-radius: 10px; height: 100%">
+										<div class="img-wrap" style="max-height: 40rem">
+											<img src="images/engenheiros_amb.jpg" alt="Image" class="img-fluid" style="overflow: hidden" />
+										</div>
+									</figure>
+								</div>
 
-								<div class="lead gsap-reveal">
-									<span style="font-weight: 500">What sets us apart:</span><br />• Disruptive innovation powered by IoT solutions<br />• Dual-benefit approach: <br />
-									- Freshwater production <br />
-									- Sustainable brine mining
-									<p class="mt-5" style="font-size: 25px; font-weight: 500">Join us in transforming desalination for a sustainable future</p>
-									<p class="gsap-reveal mt-4"><a href="#" class="btn btn-outline-pill btn-custom-light">Want to know more?</a></p>
+								<div class="col-lg-5">
+									<div class="highlight-box">
+										<div class="lead">
+											<div class="title mb-5">
+												<span class="highlight-title" style="color: #054b62">What sets us apart:</span>
+											</div>
+
+											<div class="highlight-content">Disruptive innovation powered by IoT solutions<br /></div>
+
+											<div class="highlight-content">
+												Dual-benefit approach: <br />
+												Freshwater production <br />
+												Sustainable brine mining
+											</div>
+
+											<h3 class="mt-4 heading-h3 highlight-message" style="color: #054b62">Join us in transforming desalination for a sustainable future</h3>
+											<p class="mt-4">
+												<a href="#" class="btn btn-outline-pill btn-custom-light highlight-button">Want to know more?</a>
+											</p>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -224,123 +352,126 @@
 							</div>
 						</div>
 					</div>
-					<div class="container">
-						<div class="section-heading-wrap text-center mb-5">
-							<h2 class="heading-h2 text-center divider"><span class="gsap-reveal"></span></h2>
-						</div>
-						<div class="row gutter-v4 align-items-stretch">
-							<div class="col-sm-6 col-md-6 col-lg-8 blog-post-entry" data-aos="fade-up" data-aos-delay="0">
-								<a href="#" class="grid-item blog-item w-100 h-100">
-									<div class="overlay">
-										<div class="portfolio-item-content">
-											<h3>Freshwater production</h3>
-											<p class="post-meta">We are producing freshwater from brine</p>
-										</div>
-									</div>
-									<div class="image-container">
-										<img src="images/fresh_water.jpg" class="lazyload main-image" alt="Image" />
-										<img src="images/sdg6.png" class="lazyload hover-image" alt="Hover Image" />
-									</div>
-								</a>
+					<div class="block">
+						<div class="container">
+							<div class="section-heading-wrap text-center mb-5">
+								<h2 class="heading-h2 text-center divider"><span class="gsap-reveal"></span></h2>
 							</div>
-							<div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="100">
-								<a href="#" class="grid-item blog-item w-100 h-100">
-									<div class="overlay">
-										<div class="portfolio-item-content">
-											<h3>Circular Economy</h3>
-											<p class="post-meta">We are transforming brine into a raw material</p>
+							<div class="row gutter-v4 align-items-stretch">
+								<div class="col-sm-6 col-md-6 col-lg-8 blog-post-entry" data-aos="fade-up" data-aos-delay="0">
+									<a href="#" class="grid-item blog-item w-100 h-100">
+										<div class="overlay">
+											<div class="portfolio-item-content">
+												<h3>Freshwater production</h3>
+												<p class="post-meta">We are producing freshwater from brine</p>
+											</div>
 										</div>
-									</div>
-									<div class="image-container">
-										<img src="images/raw_material.jpg" class="lazyload main-image" alt="Image" />
-										<img src="images/sdg12.png" class="lazyload hover-image" alt="Hover Image" />
-									</div>
-								</a>
-							</div>
+										<div class="image-container">
+											<img src="images/fresh_water.jpg" class="lazyload main-image" alt="Image" />
+											<img src="images/sdg6.png" class="lazyload hover-image" alt="Hover Image" />
+										</div>
+									</a>
+								</div>
+								<div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="100">
+									<a href="#" class="grid-item blog-item w-100 h-100">
+										<div class="overlay">
+											<div class="portfolio-item-content">
+												<h3>Circular Economy</h3>
+												<p class="post-meta">We are transforming brine into a raw material</p>
+											</div>
+										</div>
+										<div class="image-container">
+											<img src="images/raw_material.jpg" class="lazyload main-image" alt="Image" />
+											<img src="images/sdg12.png" class="lazyload hover-image" alt="Hover Image" />
+										</div>
+									</a>
+								</div>
 
-							<div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="0">
-								<a href="#" class="grid-item blog-item w-100 h-100">
-									<div class="overlay">
-										<div class="portfolio-item-content">
-											<h3>Reduce Waste</h3>
-											<p class="post-meta">Our technology is Zero Liquid Discharge</p>
+								<div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="0">
+									<a href="#" class="grid-item blog-item w-100 h-100">
+										<div class="overlay">
+											<div class="portfolio-item-content">
+												<h3>Reduce Waste</h3>
+												<p class="post-meta">Our technology is Zero Liquid Discharge</p>
+											</div>
 										</div>
-									</div>
-									<div class="image-container">
-										<img src="images/water_waste.jpg" class="lazyload main-image" alt="Image" />
-										<img src="images/sdg13.png" class="lazyload hover-image" alt="Hover Image" />
-									</div>
-								</a>
-							</div>
-							<div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="100">
-								<a href="#" class="grid-item blog-item w-100 h-100">
-									<div class="overlay">
-										<div class="portfolio-item-content">
-											<h3>Saving the Ocean</h3>
-											<p class="post-meta">We are eliminating harmful brine disposal</p>
+										<div class="image-container">
+											<img src="images/water_waste.jpg" class="lazyload main-image" alt="Image" />
+											<img src="images/sdg13.png" class="lazyload hover-image" alt="Hover Image" />
 										</div>
-									</div>
-									<div class="image-container">
-										<img src="images/saving_ocean.jpg" class="lazyload main-image" alt="Image" />
-										<img src="images/sdg14.png" class="lazyload hover-image" alt="Hover Image" />
-									</div>
-								</a>
-							</div>
+									</a>
+								</div>
+								<div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="100">
+									<a href="#" class="grid-item blog-item w-100 h-100">
+										<div class="overlay">
+											<div class="portfolio-item-content">
+												<h3>Saving the Ocean</h3>
+												<p class="post-meta">We are eliminating harmful brine disposal</p>
+											</div>
+										</div>
+										<div class="image-container">
+											<img src="images/saving_ocean.jpg" class="lazyload main-image" alt="Image" />
+											<img src="images/sdg14.png" class="lazyload hover-image" alt="Hover Image" />
+										</div>
+									</a>
+								</div>
 
-							<div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="200">
-								<a href="#" class="grid-item blog-item w-100 h-100">
-									<div class="overlay">
-										<div class="portfolio-item-content">
-											<h3>Sustainable Mining</h3>
-											<p class="post-meta">We offer a sustainable alternative to traditional, environmentally harmful mining practices</p>
+								<div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="200">
+									<a href="#" class="grid-item blog-item w-100 h-100">
+										<div class="overlay">
+											<div class="portfolio-item-content">
+												<h3>Sustainable Mining</h3>
+												<p class="post-meta">We offer a sustainable alternative to traditional, environmentally harmful mining practices</p>
+											</div>
 										</div>
-									</div>
-									<div class="image-container">
-										<img src="images/co2.jpg" class="lazyload main-image" alt="Image" />
-										<img src="images/sdg11.png" class="lazyload hover-image" alt="Hover Image" />
-									</div>
-								</a>
+										<div class="image-container">
+											<img src="images/co2.jpg" class="lazyload main-image" alt="Image" />
+											<img src="images/sdg11.png" class="lazyload hover-image" alt="Hover Image" />
+										</div>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<!-- END blog posts -->
-
-				<div class="unslate_co--section section-counter" id="skills-section">
-					<div class="container">
-						<div class="row pt-5">
-							<div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
-								<div class="counter-v1 text-center">
-									<span class="number-wrap">
-										<span class="number number-counter" data-number="1">0</span>
-										<span class="append-text">%</span>
-									</span>
-									<span class="counter-label" style="font-size: 10px; font-weight: 600">of the world’s water is fresh and accessible</span>
+				<div class="block">
+					<div class="unslate_co--section section-counter" id="skills-section">
+						<div class="container">
+							<div class="row pt-5">
+								<div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+									<div class="counter-v1 text-center">
+										<span class="number-wrap">
+											<span class="number number-counter" data-number="1">0</span>
+											<span class="append-text">%</span>
+										</span>
+										<span class="counter-label" style="font-size: 10px; font-weight: 600">of the world’s water is fresh and accessible</span>
+									</div>
 								</div>
-							</div>
-							<div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-								<div class="counter-v1 text-center">
-									<span class="number-wrap">
-										<span class="number number-counter" data-number="700">0</span>
-									</span>
-									<span class="counter-label" style="font-size: 10px; font-weight: 600">million people by 2030 will be displaced by intense water scarcity</span>
+								<div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+									<div class="counter-v1 text-center">
+										<span class="number-wrap">
+											<span class="number number-counter" data-number="700">0</span>
+										</span>
+										<span class="counter-label" style="font-size: 10px; font-weight: 600">million people by 2030 will be displaced by intense water scarcity</span>
+									</div>
 								</div>
-							</div>
-							<div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-								<div class="counter-v1 text-center">
-									<span class="number-wrap">
-										<span class="number number-counter" data-number="143">0</span>
-									</span>
-									<span class="counter-label" style="font-size: 10px; font-weight: 600">billions of litres of harmful brine are discharged every day in the ocean via desalination</span>
+								<div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+									<div class="counter-v1 text-center">
+										<span class="number-wrap">
+											<span class="number number-counter" data-number="143">0</span>
+										</span>
+										<span class="counter-label" style="font-size: 10px; font-weight: 600">billions of litres of harmful brine are discharged every day in the ocean via desalination</span>
+									</div>
 								</div>
-							</div>
-							<div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-								<div class="counter-v1 text-center">
-									<span class="number-wrap">
-										<span class="number number-counter" data-number="40">0</span>
-										<span class="append-text">%</span>
-									</span>
-									<span class="counter-label" style="font-size: 10px; font-weight: 600">marks the efficiency level of current desalination plants in generating freshwater</span>
+								<div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+									<div class="counter-v1 text-center">
+										<span class="number-wrap">
+											<span class="number number-counter" data-number="40">0</span>
+											<span class="append-text">%</span>
+										</span>
+										<span class="counter-label" style="font-size: 10px; font-weight: 600">marks the efficiency level of current desalination plants in generating freshwater</span>
+									</div>
 								</div>
 							</div>
 						</div>

@@ -1183,6 +1183,7 @@ a:hover {
 
 .blog-item {
 	margin-left: 0 !important;
+	border-radius: 10px;
 }
 
 .blog-item .overlay {
@@ -1702,6 +1703,10 @@ figure.dotted-bg:before {
 	width: 100%;
 	text-align: center;
 	bottom: 30px;
+}
+
+.rounded-image {
+	border-radius: 10px;
 }
 
 .blog-post-entry {
