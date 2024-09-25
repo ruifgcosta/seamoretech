@@ -54,6 +54,42 @@
 				animation-timeline: view();
 				animation-range: entry 0 cover 30%;
 			}
+			/* Definir layout para o card horizontal */
+			.card-horizontal {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				width: 100%;
+			}
+
+			@media (min-width: 992px) {
+				.card-horizontal {
+					flex-direction: row;
+				}
+			}
+
+			.card-img-left {
+				max-width: 150px;
+				padding: 1rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.card-footer-horizontal {
+				border-top: 1px solid #eaeaea;
+				flex-shrink: 0;
+				padding: 1rem;
+				display: flex;
+				justify-content: flex-end;
+				width: 100%;
+			}
+
+			@media (min-width: 992px) {
+				.card-footer-horizontal {
+					width: auto;
+				}
+			}
 		</style>
 	</head>
 
@@ -114,62 +150,83 @@
 				<div class="container">
 					<div class="portfolio-single-wrap unslate_co--section" id="portfolio-single-section">
 						<div class="portfolio-single-inner" style="margin-top: 90px">
-							<h2 class="heading-portfolio-single-h2">About</h2>
+							<h2 class="heading-portfolio-single-h2" style="font-size: 2.5rem !important; font-weight: 500 !important">About</h2>
 
 							<div class="row justify-content-between mb-5">
 								<div class="col-12 mb-4">
 									<div class="owl-carousel single-slider">
 										<figure class="mb-4">
-											<img src="images/work_1_full.jpg" alt="Image" class="img-fluid" />
-											<p class="text-black" style="position: absolute; bottom: 30px; left: 0px; padding: 10px; background: linear-gradient(#ffffff, #ffffff), rgba(0, 0, 0, 1)">
-												Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero consectetur animi maiores inventore natus dolores pariatur doloribus, voluptate nulla voluptates laudantium ad
-												doloremque quis, explicabo similique a labore exercitationem porro?
-											</p>
+											<img src="images/IMG_9755_1.jpg" alt="Image" class="img-fluid" />
+											<figcaption
+												class="text-white"
+												style="
+													position: absolute;
+													bottom: 4%;
+													left: 0;
+													width: 100%;
+													padding: 35px;
+													background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+													font-size: 1.3rem;
+													font-weight: 500;
+													color: white;
+													text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+													text-align: center;
+												"
+											>
+												We are motivated by a continuous growth philosophy. We believe in constant learning, which is critical to staying ahead of the curve and pushing the boundaries.
+											</figcaption>
 										</figure>
 										<figure class="mb-4">
-											<img src="images/work_1_a_full.jpg" alt="Image" class="img-fluid" />
+											<img src="images/IMG_9755_1.jpg" alt="Image" class="img-fluid" />
+											<figcaption
+												class="text-white"
+												style="
+													position: absolute;
+													bottom: 4%;
+													left: 0;
+													width: 100%;
+													padding: 35px;
+													background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+													font-size: 1.3rem;
+													font-weight: 500;
+													color: white;
+													text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+													text-align: center;
+												"
+											>
+												We are committed to developing solutions for a sustainable future.
+											</figcaption>
 										</figure>
-									</div>
-								</div>
-								<div class="block">
-									<div class="row mb-5" style="margin-top: 5rem">
-										<div class="col-md-6">
-											<p style="font-size: 32px">
-												We are motivated by a continuous growth philosophy. We believe in constant learning, which is critical to staying ahead of the curve and pushing the boundaries.
-											</p>
-										</div>
-										<div class="col-md-6">
-											<p style="font-size: 32px">We are committed to developing solutions for a sustainable future.</p>
-										</div>
 									</div>
 								</div>
 							</div>
 							<!-- Team 2 - Bootstrap Brain Component -->
-							<section class="py-3 py-md-5 py-xl-8">
+							<section class="py-3 py-md-5">
 								<div class="block">
 									<div class="container mt-5">
 										<div class="row justify-content-md-center">
 											<div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-												<h2 class="fs-6 text-secondary mb-2 text-center">Our Team</h2>
+												<h1 class="heading gsap-reveal-hero" data-aos="fade-up" data-aos-delay="0" style="color: #054b62; text-align-last: center">Our Team</h1>
 												<p class="display-5 mb-4 mb-md-5 text-center" style="font-size: 25px">We are a dynamic and full of-grit team united by a shared passion for innovation</p>
 												<hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle" />
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="block">
-									<div class="container overflow-hidden">
+
+								<div class="container overflow-hidden">
+									<div class="block">
 										<div class="row gy-4 gy-lg-0">
 											<div class="col-12 col-lg-4">
 												<div class="card border-0">
 													<figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
 														<a href="#!">
-															<img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy" src="images/person_man_1.jpg" alt="Flora Nyra" />
+															<img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy" src="images/9778.png" alt="Co-founder & CEO" />
 														</a>
 													</figure>
 													<div class="card-body border bg-white p-4">
-														<h2 class="card-title h4 fw-bold mb-3">Flora Nyra</h2>
-														<p class="card-text text-secondary">Chemical Engineer Co-Founder & CTO</p>
+														<h2 class="card-title h4 fw-bold mb-3">Sofia Delgado</h2>
+														<p class="card-text text-secondary">Co-founder & CEO</p>
 													</div>
 													<div class="card-footer border border-top-0 bg-white p-4">
 														<ul class="nav mb-0 bsb-nav-sep">
@@ -180,7 +237,7 @@
 																			d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
 																		/>
 																	</svg>
-																	<span class="ms-2 fs-6" style="color: black; margin-left: 10px">/Flora_Nyra</span>
+																	<span class="ms-2 fs-6" style="color: black; margin-left: 10px">/sofia-delgado</span>
 																</a>
 															</li>
 														</ul>
@@ -191,12 +248,12 @@
 												<div class="card border-0">
 													<figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
 														<a href="#!">
-															<img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy" src="images/person_woman_1.jpg" alt="James Levi" />
+															<img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy" src="images/9792.png" alt="Co-founder & CTO" />
 														</a>
 													</figure>
 													<div class="card-body border bg-white p-4">
-														<h2 class="card-title h4 fw-bold mb-3">James Levi</h2>
-														<p class="card-text text-secondary">Chemical Engineer Co-Founder & CEO</p>
+														<h2 class="card-title h4 fw-bold mb-3">Eva Sousa</h2>
+														<p class="card-text text-secondary">Co-founder & CTO</p>
 													</div>
 													<div class="card-footer border border-top-0 bg-white p-4">
 														<ul class="nav mb-0 bsb-nav-sep">
@@ -207,7 +264,7 @@
 																			d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
 																		/>
 																	</svg>
-																	<span class="ms-2 fs-6" style="color: black; margin-left: 10px">/James_Levi</span>
+																	<span class="ms-2 fs-6" style="color: black; margin-left: 10px">/evafilipasousa</span>
 																</a>
 															</li>
 														</ul>
@@ -218,12 +275,12 @@
 												<div class="card border-0">
 													<figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
 														<a href="#!">
-															<img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy" src="images/person_woman_2.jpg" alt="Taytum Elia" />
+															<img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy" src="images/9776.png" alt="Process Engineer & R&D" />
 														</a>
 													</figure>
 													<div class="card-body border bg-white p-4">
-														<h2 class="card-title h4 fw-bold mb-3">Taytum Elia</h2>
-														<p class="card-text text-secondary">Chemical Engineer</p>
+														<h2 class="card-title h4 fw-bold mb-3">Diogo Gonçalves</h2>
+														<p class="card-text text-secondary">Process Engineer & R&D</p>
 													</div>
 													<div class="card-footer border border-top-0 bg-white p-4">
 														<ul class="nav mb-0 bsb-nav-sep">
@@ -234,7 +291,7 @@
 																			d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
 																		/>
 																	</svg>
-																	<span class="ms-2 fs-6" style="color: black; margin-left: 10px">/Taytum_Elia</span>
+																	<span class="ms-2 fs-6" style="color: black; margin-left: 10px">/diogo-gonçalves</span>
 																</a>
 															</li>
 														</ul>
@@ -242,17 +299,19 @@
 												</div>
 											</div>
 										</div>
+									</div>
+									<div class="block">
 										<div class="row gy-4 gy-lg-0 mt-4">
 											<div class="col-12 col-lg-4">
 												<div class="card border-0">
 													<figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
 														<a href="#!">
-															<img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy" src="images/person_man_1.jpg" alt="Flora Nyra" />
+															<img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy" src="images/9801.png" alt="Product Developer" />
 														</a>
 													</figure>
 													<div class="card-body border bg-white p-4">
-														<h2 class="card-title h4 fw-bold mb-3">Flora Nyra</h2>
-														<p class="card-text text-secondary">Chemical Engineer Co-Founder & CTO</p>
+														<h2 class="card-title h4 fw-bold mb-3">Pedro Bastos</h2>
+														<p class="card-text text-secondary">Product Developer</p>
 													</div>
 													<div class="card-footer border border-top-0 bg-white p-4">
 														<ul class="nav mb-0 bsb-nav-sep">
@@ -263,7 +322,7 @@
 																			d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
 																		/>
 																	</svg>
-																	<span class="ms-2 fs-6" style="color: black; margin-left: 10px">/Flora_Nyra</span>
+																	<span class="ms-2 fs-6" style="color: black; margin-left: 10px">/pedro-bastos</span>
 																</a>
 															</li>
 														</ul>
@@ -274,12 +333,12 @@
 												<div class="card border-0">
 													<figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
 														<a href="#!">
-															<img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy" src="images/person_woman_1.jpg" alt="James Levi" />
+															<img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy" src="images/9815.png" alt="Software & Automation Engineer" />
 														</a>
 													</figure>
 													<div class="card-body border bg-white p-4">
-														<h2 class="card-title h4 fw-bold mb-3">James Levi</h2>
-														<p class="card-text text-secondary">Chemical Engineer Co-Founder & CEO</p>
+														<h2 class="card-title h4 fw-bold mb-3">Jorge Tomás</h2>
+														<p class="card-text text-secondary">Software & Automation Engineer</p>
 													</div>
 													<div class="card-footer border border-top-0 bg-white p-4">
 														<ul class="nav mb-0 bsb-nav-sep">
@@ -290,7 +349,7 @@
 																			d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
 																		/>
 																	</svg>
-																	<span class="ms-2 fs-6" style="color: black; margin-left: 10px">/James_Levi</span>
+																	<span class="ms-2 fs-6" style="color: black; margin-left: 10px">/jorgemtomas</span>
 																</a>
 															</li>
 														</ul>
@@ -300,31 +359,39 @@
 											<div class="col-12 col-lg-4">
 												<div class="card border-0">
 													<figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
-														<a href="#!" style="background: #9ad8e0">
-															<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-																<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-																<g id="SVGRepo_iconCarrier">
-																	<path
-																		fill-rule="evenodd"
-																		clip-rule="evenodd"
-																		d="M16.5 7.063C16.5 10.258 14.57 13 12 13c-2.572 0-4.5-2.742-4.5-5.938C7.5 3.868 9.16 2 12 2s4.5 1.867 4.5 5.063zM4.102 20.142C4.487 20.6 6.145 22 12 22c5.855 0 7.512-1.4 7.898-1.857a.416.416 0 0 0 .09-.317C19.9 18.944 19.106 15 12 15s-7.9 3.944-7.989 4.826a.416.416 0 0 0 .091.317z"
-																		fill="#ffffff"
-																	></path>
-																</g>
-															</svg>
+														<a href="#!">
+															<img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy" src="images/9786.png" alt="Economics & Finance Analyst" />
 														</a>
 													</figure>
 													<div class="card-body border bg-white p-4">
+														<h2 class="card-title h4 fw-bold mb-3">Joana Leite</h2>
+														<p class="card-text text-secondary">Economics & Finance Analyst</p>
+													</div>
+													<div class="card-footer border border-top-0 bg-white p-4">
+														<ul class="nav mb-0 bsb-nav-sep">
+															<li class="nav-item text-secondary">
+																<a class="nav-link link-secondary p-0 pe-3 d-inline-flex align-items-center" href="#!">
+																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+																		<path
+																			d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+																		/>
+																	</svg>
+																	<span class="ms-2 fs-6" style="color: black; margin-left: 10px">/joanaleite</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+											<div class="col-12 mt-5">
+												<div class="card-horizontal border-0 d-flex flex-column flex-lg-row">
+													<div class="card-body border bg-white p-4 d-flex flex-column justify-content-center">
 														<h2 class="card-title h4 fw-bold mb-3">Be one of us!</h2>
 														<p class="card-text text-secondary">Let's change the way of life.</p>
 													</div>
-													<div class="card-footer border border-top-0 bg-white p-4">
-														<ul class="nav mb-0 bsb-nav-sep" style="place-content: center">
-															<li class="nav-item text-secondary">
-																<a href="#" class="btn">Contact Us</a>
-															</li>
-														</ul>
+
+													<div class="card-footer-horizontal border bg-white p-4 d-flex align-items-center justify-content-end">
+														<a href="#" class="btn">Contact Us</a>
 													</div>
 												</div>
 											</div>
