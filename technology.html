@@ -224,7 +224,7 @@
 						<div class="row align-items-center justify-content-between text-left">
 							<div class="col-md-5 text-right">
 								<ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
-									<li class="has-children">
+									<li>
 										<a href="index.html" class="nav-link">Home</a>
 									</li>
 
@@ -262,7 +262,7 @@
 					</div>
 
 					<!-- dov -->
-					<a href="#blog-single-section" class="mouse-wrap smoothscroll">
+					<a href="#about-section" class="mouse-wrap smoothscroll">
 						<span class="mouse">
 							<span class="scroll"></span>
 						</span>
@@ -281,7 +281,7 @@
 										(Ca), magnesium (Mg), lithium (Li), sodium (Na), and others, which are crucial to several industries due to their limited availability and high strategic importance. Through a
 										zero-liquid discharge strategy, we are recovering all the water present in brine, effectively doubling the water production capacity of desalination plants.
 									</p>
-									<p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light">Want to know more?</a></p>
+									<p class="gsap-reveal"><a href="./contact.html" class="btn btn-outline-pill btn-custom-light">Want to know more?</a></p>
 								</div>
 								<div class="sustainable-features col-6">
 									<div class="highlight-content">
@@ -485,7 +485,7 @@
 
 										<div class="testimonial-author-info">
 											<img src="images/seamoretech_ico.png" alt="Image" />
-											<h3>Founders </h3>
+											<h3>Founders</h3>
 											<span class="d-block position">Seamoretech</span>
 										</div>
 									</div>
@@ -504,14 +504,22 @@
 								<a href="#">seamoretech</a>
 							</div>
 
-							<ul class="footer-site-social">
-								<li><a href="#">Facebook</a></li>
-								<li><a href="#">Twitter</a></li>
-								<li><a href="#">Instagram</a></li>
-							</ul>
+							<div class="social-container">
+								<span class="social-text">Connect with us:</span>
+								<a href="https://www.linkedin.com/company/seamoretech/?originalSubdomain=pt" target="_blank">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+										<path
+											d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+										/>
+									</svg>
+								</a>
+							</div>
 
 							<p class="site-copyright">
-								<small>&copy; 2024 <a href="#">seamoretech</a>. All Rights Reserved. Design with <span class="icon-heart text-blue"></span> by <a href="#">seamoretech</a>.</small>
+								<small>
+									&copy; <span id="currentYear"></span> <a href="#">seamoretech</a>. All Rights Reserved. Template made by <a href="https://colorlib.com" target="_blank">Colorlib</a> | Edited with
+									<span class="icon-heart text-blue"></span> by <a href="#">seamoretech</a>.
+								</small>
 							</p>
 						</div>
 					</div>
@@ -538,6 +546,12 @@
 			gtag('js', new Date());
 
 			gtag('config', 'UA-157808202-1');
+		</script>
+		<script>
+			// Obtem o ano atual
+			const year = new Date().getFullYear();
+			// Define o ano no elemento com id 'currentYear'
+			document.getElementById('currentYear').textContent = year;
 		</script>
 	</body>
 </html>

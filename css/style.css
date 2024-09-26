@@ -2719,11 +2719,14 @@ span.error {
 .sustainable-section {
 	padding: 60px 20px;
 	display: flex;
+	flex-wrap: wrap; /* Ajustado para garantir que os elementos fiquem responsivos */
 	align-items: center;
+	justify-content: space-between; /* Adicionado para distribuir o conteúdo de maneira uniforme */
+	gap: 20px; /* Adicionado para espaçamento entre os elementos */
 }
 
 .sustainable-content {
-	flex: 0 0 50%;
+	flex: 1 1 50%; /* Permite que o conteúdo seja flexível e redimensione responsivamente */
 	max-width: 500px;
 	text-align: left;
 	margin-right: 40px;
@@ -2740,9 +2743,9 @@ span.error {
 }
 
 .sustainable-features {
-	flex: 0 0 100%;
+	flex: 1 1 100%; /* Faz o grid ocupar todo o espaço disponível */
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Tornar o grid adaptável com colunas flexíveis */
 	grid-gap: 30px;
 }
 
@@ -2759,9 +2762,9 @@ span.error {
 	font-size: 16px;
 }
 
-/* Responsive Styles */
+/* Estilos Responsivos */
 
-/* Small devices (phones) */
+/* Pequenos dispositivos (telefones) */
 @media (max-width: 767px) {
 	.sustainable-section {
 		flex-direction: column;
@@ -2784,21 +2787,22 @@ span.error {
 	}
 
 	.sustainable-features {
-		flex: 0 0 100%;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(1, 1fr); /* Ajuste para apenas uma coluna em dispositivos pequenos */
 	}
 }
 
-/* Medium devices (tablets) */
+/* Dispositivos médios (tablets) */
 @media (min-width: 768px) and (max-width: 991px) {
 	.sustainable-section {
 		padding: 50px 20px;
+		flex-direction: column; /* Ajuste para melhorar o layout em tablets */
 	}
 
 	.sustainable-content {
 		flex: 0 0 60%;
 		max-width: 500px;
-		margin-right: 30px;
+		margin-right: 0;
+		margin-bottom: 30px;
 	}
 
 	.sustainable-content h2 {
@@ -2810,21 +2814,23 @@ span.error {
 	}
 
 	.sustainable-features {
-		flex: 0 0 100%;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, 1fr); /* Ajuste para duas colunas em tablets */
 	}
 }
 
-/* Large devices (desktops) */
+/* Grandes dispositivos (desktops) */
 @media (min-width: 992px) {
 	.sustainable-section {
-		padding: 60px 20px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 20px;
 	}
 
-	.sustainable-content {
-		flex: 0 0 50%;
-		max-width: 500px;
-		margin-right: 40px;
+	.sustainable-content,
+	.sustainable-features {
+		flex: 1;
+		min-width: 300px;
 	}
 
 	.sustainable-content h2 {
@@ -2836,8 +2842,7 @@ span.error {
 	}
 
 	.sustainable-features {
-		flex: 0 0 100%;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, 1fr); /* Ajuste para duas colunas em desktops */
 	}
 }
 

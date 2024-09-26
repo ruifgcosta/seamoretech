@@ -213,6 +213,10 @@ var owlCarouselPlugin = function () {
 			dots: false,
 			nav: false,
 			responsive: {
+				0: {
+					// Para telas menores
+					items: 1,
+				},
 				400: {
 					items: 1,
 				},
@@ -509,11 +513,40 @@ var jarallaxPlugin = function () {
 	$('.jarallax').jarallax({
 		speed: 0.2,
 	});
+
 	jarallax(document.querySelectorAll('.jarallax-video'), {
 		speed: 0.2,
-		videoSrc: 'https://www.youtube.com/watch?v=3fKeYTjSJHo&vq=hd2160',
+		videoSrc: 'https://www.youtube.com/watch?v=idLL-wvWy6M',
 		videoStartTime: 0,
 		videoEndTime: 22,
+		onInit: function () {
+			// Espera até que o iframe seja carregado
+			setTimeout(function () {
+				var iframe = document.querySelector('#VideoWorker-0');
+				if (iframe) {
+					console.log('encontrei a iframe');
+					var scaleFactor = window.innerWidth < 768 ? 1.3 : 1.2; // Ajusta o zoom em telas pequenas
+					iframe.style.setProperty('transform', 'scale(' + scaleFactor + ')', 'important');
+					iframe.style.setProperty('transform-origin', 'center', 'important');
+
+					// Cria um MutationObserver para monitorar mudanças no iframe
+					var observer = new MutationObserver(function (mutations) {
+						mutations.forEach(function (mutation) {
+							// Re-aplica o estilo sempre que houver alterações
+							iframe.style.setProperty('transform', 'scale(' + scaleFactor + ')', 'important');
+							iframe.style.setProperty('transform-origin', 'center', 'important');
+						});
+					});
+
+					// Configura o observer para observar atributos e estilos
+					observer.observe(iframe, {
+						attributes: true,
+						childList: true,
+						subtree: true,
+					});
+				}
+			}, 1000); // Tempo para garantir que o iframe seja carregado
+		},
 	});
 };
 
