@@ -213,6 +213,83 @@
 					font-size: 1.2em;
 				}
 			}
+			/* Caixa com fundo claro e margens */
+			.highlight-box {
+				background-color: #f2f2f2;
+				padding: 30px;
+				border-radius: 10px;
+				text-align: left; /* Alinha o texto à esquerda */
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				height: 100%;
+			}
+
+			/* Título com estilo */
+			.highlight-title {
+				font-weight: 600;
+				font-size: 1.5em;
+				color: #333;
+				margin-bottom: 20px;
+				text-align: center;
+			}
+
+			/* Centro do conteúdo */
+			.highlight-center {
+				flex-grow: 1;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			/* Conteúdo estilizado com sombra sólida e carregada */
+			.highlight-content {
+				font-size: 1.3em;
+				color: white; /* Cor do texto */
+				background-color: #054b62; /* Cor de fundo */
+				line-height: 1.6;
+				margin-bottom: 30px;
+				padding: 20px; /* Adiciona espaçamento interno */
+				border-radius: 10px; /* Bordas arredondadas */
+				box-shadow: 5px 5px 0px #9ad8e0, 5px 5px 0px rgba(154, 216, 224, 0.8); /* Sombra simulando a segunda caixa */
+				position: relative;
+				display: inline-block;
+				width: 100%;
+			}
+
+			/* Mensagem e botão posicionados no fundo */
+			.highlight-message {
+				font-size: 1.4em;
+				font-weight: bold;
+				color: #444;
+				margin-bottom: 10px;
+				position: relative;
+				text-align: left;
+			}
+
+			.highlight-button {
+				margin-bottom: 0; /* Para garantir que o botão fica no fundo */
+			}
+
+			/* Responsividade */
+			@media (max-width: 768px) {
+				.highlight-box {
+					padding: 20px;
+				}
+
+				.highlight-title {
+					font-size: 1.3em;
+				}
+
+				.highlight-content {
+					font-size: 1.2em;
+				}
+
+				.highlight-message {
+					font-size: 1.2em;
+				}
+			}
 		</style>
 	</head>
 	<body data-spy="scroll" data-target=".site-nav-target" data-offset="200">
@@ -231,11 +308,11 @@
 
 		<div class="unslate_co--site-wrap">
 			<div class="unslate_co--site-inner">
-				<div class="lines-wrap">
+				<!-- <div class="lines-wrap">
 					<div class="lines-inner">
 						<div class="lines"></div>
 					</div>
-				</div>
+				</div> -->
 				<!-- END lines -->
 
 				<nav class="unslate_co--site-nav site-nav-target">
@@ -466,6 +543,54 @@
 						</div>
 					</div>
 				</div>
+				<div class="unslate_co--section" id="about-section">
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col-md-8 mx-auto text-center">
+								<h1 class="heading gsap-reveal-hero" data-aos="fade-up" data-aos-delay="0" style="color: #054b62">Eliminate harmful brine disposal through cutting-edge technology</h1>
+							</div>
+						</div>
+					</div>
+					<div class="block">
+						<div class="container">
+							<div class="section-heading-wrap text-center mb-5">
+								<h2 class="heading-h2 text-center divider"><span class="gsap-reveal"></span></h2>
+							</div>
+
+							<div class="row mt-5 justify-content-between position-relative">
+								<div class="col-lg-7 mb-5 mb-lg-0" data-aos="fade-up">
+									<figure class="dotted-bg" style="overflow: hidden; margin-bottom: 0px; border-radius: 10px; height: 100%">
+										<div class="img-wrap" style="max-height: 40rem">
+											<img src="images/engenheiros_amb.jpg" alt="Image" class="img-fluid" style="overflow: hidden" />
+										</div>
+									</figure>
+								</div>
+
+								<div class="col-lg-5">
+									<div class="highlight-box">
+										<div class="lead">
+											<div class="title mb-5">
+												<span class="highlight-title" style="color: #054b62">What sets us apart:</span>
+											</div>
+
+											<div class="highlight-content" style="text-align: left">Powered by IoT<br /></div>
+
+											<div class="highlight-content" style="text-align: left">
+												Dual-benefit approach: <br />
+												Freshwater production and Sustainable brine mining
+											</div>
+
+											<h3 class="mt-4 heading-h3 highlight-message" style="color: #054b62">Join us in transforming desalination for a sustainable future</h3>
+											<p class="mt-4">
+												<a href="./contact.html" class="btn btn-outline-pill btn-custom-light highlight-button">Want to know more?</a>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="block">
 					<div class="unslate_co--section" id="blog-single-section">
 						<div class="container">
@@ -476,7 +601,7 @@
 									</div>
 									<div class="col-md-7">
 										<div class="card-body">
-											<h2 class="card-title">Our technology saves money on waste management, water use, and energy.</h2>
+											<h2 class="card-title">Our technology is a plug & play solution and saves money on waste management, water use, and energy.</h2>
 											<p class="card-text" style="font-size: 18px; text-align: justify; font-weight: 200">
 												Our easy-to-install system is completely independent of upstream processes, being applied directly at the brine discharge site and not interfering with existing processes. This
 												<strong> fully autonomous system</strong>, equipped with IoT devices intertwined with remote control, can handle unexpected shutdowns, and adapts to treat brine with different
@@ -498,7 +623,7 @@
 										<div class="testimonial-inner-bg">
 											<span class="quote">&ldquo;</span>
 											<blockquote>
-												Our mission is to position Seamoretech as a strong company in the desalination and sustainable mining industries, attracting environmentally conscious customers and investors.
+												Our mission is to position Seamoretech as a leading company for sustainable desalination and mining, attracting environmentally conscious customers and investors.
 											</blockquote>
 										</div>
 
