@@ -2746,7 +2746,7 @@ span.error {
 	flex: 1 1 100%; /* Faz o grid ocupar todo o espaço disponível */
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Tornar o grid adaptável com colunas flexíveis */
-	grid-gap: 30px;
+	grid-gap: 10px;
 }
 
 .sustainable-features .feature {
